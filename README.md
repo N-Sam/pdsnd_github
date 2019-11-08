@@ -1,15 +1,19 @@
 ### Date created
-Include the date you created this project and README file.
+
+Friday, November 8, 2019
 
 ### Project Title
-Replace the Project Title
+
+Explore US Bike Share Databases
 
 ### Description
-Describe what your project is about and what it does
+
+In this project we shall explore **US bike share database** for three major cities new york, chicago and washington to answer some few question about the bikes sharing such as _what is the most common day of the week?_
 
 ### Files used
-Include the files used
+
+:octocat: bikeshare.py
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
 
+https://pandas.pydata.org - automatic!
