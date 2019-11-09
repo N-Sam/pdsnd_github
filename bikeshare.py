@@ -29,7 +29,6 @@ def get_filters():
     except Exception as e:
         print("Exception ".format(e))
 
-
     print("")
     print('Please enter the month name of your interest to explore, to see for all month enter all')
     months = ['january', 'february','march','april','may','june','all']
@@ -40,19 +39,15 @@ def get_filters():
             if user_choice_month not in months:
                 print("Please provide a valid month chose from these options [january, february,march,april,may,june,all] ")
                 user_choice_month = str(input()).lower()
-
             else:
                 print("Thanks your month of interest was {} ".format(user_choice_month))
                 month = user_choice_month
                 break
-
         else:
             print(" There is no data for that month ")
 
     except Exception as e:
         print("Exception: ".format(e))
-
-
 
     print("") #printing blank space
     print("Enter a particular day of the week of your interest Or all, to see for all days ")
@@ -73,9 +68,7 @@ def get_filters():
 
     except Exception as e:
         print("Exception: ".format(e))
-
-    #load_data(city, month, day)
-
+   
     print('-'*40)
     return city, month, day
 
@@ -110,7 +103,6 @@ def load_data(city, month, day):
             else:
                 break
 
-
     return df
 
 
@@ -118,7 +110,6 @@ def time_stats(df):
    
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
-
 
     most_common_month = df['month'].mode()[0]
     #converting month index to coresponding month name
