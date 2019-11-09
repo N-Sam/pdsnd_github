@@ -38,7 +38,7 @@ def get_filters():
 
 
     print("")
-    print('Please enter the month name of your interest to explore, to see for all month enter all')
+    print('Please enter the month name of your interest to explore, Enter all to see for all month in range')
     months = ['january', 'february','march','april','may','june','all']
     user_choice_month = str(input()).lower()
     print("") #printing blank space
