@@ -16,4 +16,4 @@ In this project we shall explore **US bike share database** for three major citi
 
 ### Credits
 
-https://pandas.pydata.org - automatic!
+https://pandas.pydata.org
