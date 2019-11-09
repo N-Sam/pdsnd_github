@@ -116,19 +116,19 @@ def time_stats(df):
     if most_common_month == 1:
         most_common_month = 'January'
         print("The most common month is {}".format(most_common_month))
-    elif most_common_month == 2:
+    if most_common_month == 2:
         most_common_month = 'February'
         print("The most common month is {}".format(most_common_month))
-    elif most_common_month == 3:
+    if most_common_month == 3:
         most_common_month = 'March'
         print("The most common month is {}".format(most_common_month))
-    elif most_common_month == 4:
+    if most_common_month == 4:
         most_common_month = 'April'
         print("The most common month is {}".format(most_common_month))
-    elif most_common_month == 5:
+    if most_common_month == 5:
         most_common_month = 'May'
         print("The most common month is {}".format(most_common_month))
-    elif most_common_month == 6:
+    if most_common_month == 6:
         most_common_month = 'June'
         print("The most common month is {}".format(most_common_month))
 
