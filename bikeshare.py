@@ -7,14 +7,7 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'washington': 'washington.csv' }
 
 def get_filters():
-    """
-    Asks user to specify a city, month, and day to analyze.
-
-    Returns:
-        (str) city - name of the city to analyze
-        (str) month - name of the month to filter by, or "all" to apply no month filter
-        (str) day - name of the day of week to filter by, or "all" to apply no day filter
-    """
+   
     print('Hello! Let\'s explore some US bikeshare data!')
     print("")
 
@@ -36,7 +29,6 @@ def get_filters():
     except Exception as e:
         print("Exception ".format(e))
 
-
     print("")
     print('Please enter the month name of your interest to explore, Enter all to see for all month in range')
     months = ['january', 'february','march','april','may','june','all']
@@ -47,19 +39,15 @@ def get_filters():
             if user_choice_month not in months:
                 print("Please provide a valid month chose from these options [january, february,march,april,may,june,all] ")
                 user_choice_month = str(input()).lower()
-
             else:
                 print("Thanks your month of interest was {} ".format(user_choice_month))
                 month = user_choice_month
                 break
-
         else:
             print(" There is no data for that month ")
 
     except Exception as e:
         print("Exception: ".format(e))
-
-
 
     print("") #printing blank space
     print("Enter a particular day of the week of your interest Or all, to see for all days ")
@@ -80,25 +68,12 @@ def get_filters():
 
     except Exception as e:
         print("Exception: ".format(e))
-
-    #load_data(city, month, day)
-
+   
     print('-'*40)
     return city, month, day
 
 
 def load_data(city, month, day):
-    """
-    Loads data for the specified city and filters by month and day if applicable.
-
-    Args:
-        (str) city - name of the city to analyze
-        (str) month - name of the month to filter by, or "all" to apply no month filter
-        (str) day - name of the day of week to filter by, or "all" to apply no day filter
-    Returns:
-        df - Pandas DataFrame containing city data filtered by month and day
-    """
-
     df = pd.read_csv(CITY_DATA[city])
 
     df['Start Time'] = pd.to_datetime(df['Start Time']) #coverting string dates to datetime format
@@ -128,35 +103,32 @@ def load_data(city, month, day):
             else:
                 break
 
-
     return df
 
 
 def time_stats(df):
-    """Displays statistics on the most frequent times of travel."""
-
+   
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
-
 
     most_common_month = df['month'].mode()[0]
     #converting month index to coresponding month name
     if most_common_month == 1:
         most_common_month = 'January'
         print("The most common month is {}".format(most_common_month))
-    elif most_common_month == 2:
+    if most_common_month == 2:
         most_common_month = 'February'
         print("The most common month is {}".format(most_common_month))
-    elif most_common_month == 3:
+    if most_common_month == 3:
         most_common_month = 'March'
         print("The most common month is {}".format(most_common_month))
-    elif most_common_month == 4:
+    if most_common_month == 4:
         most_common_month = 'April'
         print("The most common month is {}".format(most_common_month))
-    elif most_common_month == 5:
+    if most_common_month == 5:
         most_common_month = 'May'
         print("The most common month is {}".format(most_common_month))
-    elif most_common_month == 6:
+    if most_common_month == 6:
         most_common_month = 'June'
         print("The most common month is {}".format(most_common_month))
 
@@ -174,8 +146,7 @@ def time_stats(df):
 
 
 def station_stats(df):
-    """Displays statistics on the most popular stations and trip."""
-
+    
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
 
@@ -198,8 +169,7 @@ def station_stats(df):
 
 
 def trip_duration_stats(df):
-    """Displays statistics on the total and average trip duration."""
-
+   
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
@@ -217,8 +187,7 @@ def trip_duration_stats(df):
 
 
 def user_stats(df):
-    """Displays statistics on bikeshare users."""
-
+    
     print('\nCalculating User Stats...\n')
     start_time = time.time()
 
